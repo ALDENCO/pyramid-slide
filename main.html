@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Pyramid Slide</h1>
+
+    <style>
+        #pyramid {
+            line-height: 0;
+            font-size: 30px;
+        }
+        body {
+            font-family: "Courier New", monospace;
+            text-align: center;
+        }
+        .invalid-field {
+            border: 1px solid red;
+        }
+        .error-message {
+            color: red;
+        }
+    </style>
+<main>
+
+
+            <form id="draw-form">
+                    <input v-model="heightStr" type="range" id="height" oninput = "pyramidRows()" />
+
+                     
+                    </label>
+                    <input type="submit" value="Draw a pyramid"/> 
+                </label>
+                <br><br>
+            </form>
+
+            <br><br>
+
+            <div id="pyramid">
+                <!--
+                TODO 6: Add some Vue.js code right here.
+                You'll want to use v-for="row in rows"
+                and make a <p> for each one.
+                -->
+                <p v-for="row in rows" v-html="row" />
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
