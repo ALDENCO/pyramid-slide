@@ -2,8 +2,18 @@
 var slide = new Vue({
     el: 'main',
     data: function() {
+
+        selected: '#','@','X','$',':)'
+        options: [
+            {text: '#', value:'#'},
+            {text:'@', value:'@'},
+            {text:'X', value: 'X'},
+            {text: '$', value: '$'},
+            {text: ':)', value:':)'},
+        ]
         return {
-            heightStr: '5',
+            heightStr: '',
+            dropDown: this.value,
             // height: 5,
             //error: null
         };
@@ -45,11 +55,14 @@ function pyramidRows(height) {
             rowStr += spaceChar;
         }
         for (var i = 0; i < numBricks; i++) {
-            rowStr += "#";
+            rowStr += selected;
         }
 
         rowStrings.push(rowStr);
     }
     return rowStrings;
+
+    
+    
 
 }

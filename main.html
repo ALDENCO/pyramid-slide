@@ -7,17 +7,12 @@
     <style>
         #pyramid {
             line-height: 0;
-            font-size: 30px;
+            font-size: 50px;
         }
         body {
             font-family: "Courier New", monospace;
             text-align: center;
-        }
-        .invalid-field {
-            border: 1px solid red;
-        }
-        .error-message {
-            color: red;
+      
         }
     </style>
 <main>
@@ -28,13 +23,20 @@
 
                      
                     </label>
-                    <input type="submit" value="Draw a pyramid"/> 
+                  
                 </label>
                 <br><br>
             </form>
-
+            <select v-model="selected">
+                <option v-for = "option in options" v-bind:value = "options.value" onchange = {{ selected }}>
+                <option value="#">#</option>
+                <option value="@">@</option>
+                <option value="X">X</option>
+                <option value="$">$</option>
+                <option value=":)">:)</option>
+              </select>
             <br><br>
-
+<span> {{ selected }}</span>
             <div id="pyramid">
                 <!--
                 TODO 6: Add some Vue.js code right here.
