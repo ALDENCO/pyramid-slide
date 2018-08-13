@@ -55,7 +55,7 @@ function pyramidRows(height) {
             rowStr += spaceChar;
         }
         for (var i = 0; i < numBricks; i++) {
-            rowStr += selected;
+            rowStr += "#";
         }
 
         rowStrings.push(rowStr);
