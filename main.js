@@ -13,7 +13,7 @@ var slide = new Vue({
         ]
         return {
             heightStr: '',
-            dropDown: this.value,
+            selected: this.value,
             // height: 5,
             //error: null
         };
