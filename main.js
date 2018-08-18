@@ -1,16 +1,9 @@
+//document.getElementById("pyramidRows").innerHTML = "selected"
+
 
 var slide = new Vue({
     el: 'main',
     data: function() {
-
-        selected: '#','@','X','$',':)'
-        options: [
-            {text: '#', value:'#'},
-            {text:'@', value:'@'},
-            {text:'X', value: 'X'},
-            {text: '$', value: '$'},
-            {text: ':)', value:':)'},
-        ]
         return {
             heightStr: '',
             selected: this.value,
@@ -23,22 +16,14 @@ var slide = new Vue({
             return parseInt(this.heightStr);
         },
         rows: function() {
-            return pyramidRows(this.height);
-            // TODO 5
-            // Fill out this computed property by calling
-            // pyramidRows on this.height.
-   
+            console.log('recalculating', this.height, this.selected);
+            return pyramidRows(this.height, this.selected);
         },
-        // TODO 4 (and two other places: search for "TODO 4")
-        // Make a new computed property 'error'.
-        // It should be the result of calling checkForErrors on this.heightStr.
-        // (Delete the error key from data once this is done)
-
     },
 });
 
 
-function pyramidRows(height) {
+function pyramidRows(height, blockChar) {
 
     var rowStrings = [];
     // for each row....
@@ -55,14 +40,14 @@ function pyramidRows(height) {
             rowStr += spaceChar;
         }
         for (var i = 0; i < numBricks; i++) {
-            rowStr += "#";
+            rowStr += blockChar;
         }
 
         rowStrings.push(rowStr);
     }
+    
     return rowStrings;
 
     
     
-
 }

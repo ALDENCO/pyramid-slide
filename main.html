@@ -1,53 +1,105 @@
 <!DOCTYPE html>
 <html>
-
-<body>
-    <h1>Pyramid Slide</h1>
+        <div class="transbox">
+             
+<h1 style = "letter-spacing: .8em">Pyramid Slide</h1> 
+</div>
+   
 
     <style>
-        #pyramid {
-            line-height: 0;
-            font-size: 50px;
+
+#pyramid {
+            line-height: 2;
+            font-size: 100px;
+            color: whitesmoke;
+            opacity: .9;
+            padding: auto;    
+           
+  
         }
-        body {
-            font-family: "Courier New", monospace;
+body {
+            font-family: "Courier New", monospace; 
             text-align: center;
+            font-size: 30px;
+            font-weight: bold; 
+            color: whitesmoke;
+            background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/07/3D-High-Resolution-Backgrounds.jpg");
+            font-weight: bold;
+            border: 5px solid white;
+            resize: auto;
+            overflow: auto;
+      
       
         }
+       
+div.transbox {
+    margin: 50px;
+    padding: 5px;
+    background-color: #ffffff;
+    border: 5px solid whitesmoke;
+    opacity: 0.25;
+   
+    
+}
+div.transbox h1 {
+    margin: 5px;
+    font-weight: bold;
+    color: black;
+    font-size: 65px;
+    font-stretch: 60px;
+    
+   
+}
+select {
+  
+    text-align: center;
+    font-size: 20px;
+
+}
+
+input{
+    width: 50%;
+}
+span {
+    font-size: 50px;
+    opacity: .7; 
+}
+
+}
     </style>
 <main>
 
-
+        
+       
             <form id="draw-form">
-                    <input v-model="heightStr" type="range" id="height" oninput = "pyramidRows()" />
-
-                     
-                    </label>
-                  
-                </label>
+                    <input v-model="heightStr" type="range" id="height"/>
                 <br><br>
             </form>
+       
             <select v-model="selected">
-                <option v-for = "option in options" v-bind:value = "options.value" onchange = {{ selected }}>
                 <option value="#">#</option>
                 <option value="@">@</option>
                 <option value="X">X</option>
                 <option value="$">$</option>
                 <option value=":)">:)</option>
               </select>
+           
             <br><br>
-<span> {{ selected }}</span>
+<span> {{ heightStr}}</span>
+<br><br>
             <div id="pyramid">
-                <!--
-                TODO 6: Add some Vue.js code right here.
-                You'll want to use v-for="row in rows"
-                and make a <p> for each one.
-                -->
-                <p v-for="row in rows" v-html="row" />
+            </div>
+            <p v-for="row in rows" v-html="row"/>
+     
+                
+               
             </div>
         </div>
+        
     </main>
 
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="main.js"></script>
+    
 </body>
+</html>
